@@ -1,0 +1,382 @@
+.shopivo-layout {
+  --layout-purple: #7154dc;
+  --layout-purple-dark: #5940c3;
+  --layout-ink: #29223f;
+  --layout-muted: #777386;
+
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  color: var(--layout-ink);
+  font-family: Inter, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+.shopivo-layout *,
+.shopivo-layout *::before,
+.shopivo-layout *::after {
+  box-sizing: border-box;
+}
+
+.shopivo-layout a {
+  text-decoration: none;
+}
+
+.layout-announcement {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 9px;
+  padding: 10px 16px;
+  background: #28223c;
+  color: #fff;
+  font-size: 12px;
+  text-align: center;
+}
+
+.layout-announcement > span {
+  color: #f6d777;
+}
+
+.layout-announcement a {
+  margin-left: 5px;
+  color: #f6d777;
+  font-weight: 750;
+}
+
+/* Header */
+
+.layout-header {
+  position: relative;
+  z-index: 20;
+  width: 100%;
+  border-bottom: 1px solid #f0edf6;
+  background: rgb(255 255 255 / 96%);
+}
+
+.layout-header-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 28px;
+  width: 100%;
+  max-width: 1320px;
+  min-height: 78px;
+  margin: 0 auto;
+  padding: 14px 32px;
+}
+
+.layout-brand {
+  flex-shrink: 0;
+  color: var(--layout-ink);
+  font-size: 30px;
+  font-weight: 850;
+  letter-spacing: -2px;
+}
+
+.layout-brand span {
+  color: var(--layout-purple);
+}
+
+.layout-nav {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 30px;
+  margin-left: auto;
+}
+
+.layout-nav-link {
+  position: relative;
+  padding: 10px 0;
+  color: var(--layout-muted);
+  font-size: 13px;
+  font-weight: 650;
+  transition: color 0.2s ease;
+}
+
+.layout-nav-link:hover,
+.layout-nav-link.active {
+  color: var(--layout-purple);
+}
+
+.layout-nav-link.active::after {
+  position: absolute;
+  right: 0;
+  bottom: 2px;
+  left: 0;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--layout-purple);
+  content: "";
+}
+
+.layout-auth-links {
+  display: flex;
+  align-items: center;
+  gap: 22px;
+  margin-left: 8px;
+}
+
+.layout-login {
+  color: var(--layout-ink);
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.layout-login:hover {
+  color: var(--layout-purple);
+}
+
+.layout-register {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 12px 17px;
+  border-radius: 10px;
+  background: var(--layout-purple);
+  color: #fff;
+  font-size: 12px;
+  font-weight: 750;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.layout-register:hover {
+  transform: translateY(-2px);
+  background: var(--layout-purple-dark);
+}
+
+.layout-desktop-account {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding-left: 20px;
+  border-left: 1px solid #eeeaf5;
+}
+
+.layout-avatar {
+  display: grid;
+  flex-shrink: 0;
+  place-items: center;
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+  background: #eee8ff;
+  color: var(--layout-purple-dark);
+  font-size: 14px;
+  font-weight: 800;
+}
+
+.layout-user-name {
+  max-width: 130px;
+  overflow: hidden;
+  color: var(--layout-ink);
+  font-size: 12px;
+  font-weight: 700;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.layout-logout {
+  padding: 9px 12px;
+  border: 1px solid #e8e3f2;
+  border-radius: 9px;
+  background: white;
+  color: #695e80;
+  font: inherit;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+}
+
+.layout-logout:hover {
+  border-color: #e7dfff;
+  background: #f6f2ff;
+  color: var(--layout-purple-dark);
+}
+
+.layout-mobile-account,
+.mobile-menu-toggle {
+  display: none;
+}
+
+/* Main content */
+
+.layout-main {
+  flex: 1;
+  width: 100%;
+  min-width: 0;
+}
+
+/* Footer */
+
+.layout-footer {
+  margin-top: auto;
+  border-top: 1px solid #eeeaf4;
+  background: #faf9fc;
+}
+
+.layout-footer-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  max-width: 1256px;
+  margin: 0 auto;
+  padding: 25px 32px;
+}
+
+.layout-footer .layout-brand {
+  font-size: 25px;
+}
+
+.layout-footer p {
+  margin: 0;
+  color: #858092;
+  font-size: 12px;
+}
+
+.layout-footer-inner > a:last-child {
+  color: var(--layout-purple);
+  font-size: 12px;
+  font-weight: 750;
+}
+
+/* Tablet */
+
+@media (max-width: 1000px) {
+  .layout-header-inner {
+    gap: 18px;
+    padding-right: 22px;
+    padding-left: 22px;
+  }
+
+  .layout-nav {
+    gap: 19px;
+  }
+
+  .layout-desktop-account {
+    gap: 8px;
+    padding-left: 12px;
+  }
+
+  .layout-user-name {
+    max-width: 90px;
+  }
+
+  .layout-logout {
+    padding: 8px;
+  }
+}
+
+/* Mobile navigation */
+
+@media (max-width: 760px) {
+  .layout-header-inner {
+    min-height: 70px;
+    flex-wrap: wrap;
+    gap: 0;
+    padding: 14px 20px;
+  }
+
+  .layout-brand {
+    font-size: 28px;
+  }
+
+  .mobile-menu-toggle {
+    display: grid;
+    place-items: center;
+    width: 42px;
+    height: 42px;
+    margin-left: auto;
+    border: 1px solid #eee8f8;
+    border-radius: 10px;
+    background: #faf8ff;
+    color: var(--layout-ink);
+    font-size: 21px;
+    cursor: pointer;
+  }
+
+  .layout-nav {
+    display: none;
+    order: 3;
+    align-items: stretch;
+    flex-direction: column;
+    gap: 5px;
+    width: 100%;
+    margin: 14px 0 0;
+    padding: 14px 0 4px;
+    border-top: 1px solid #f0edf6;
+  }
+
+  .layout-nav.is-open {
+    display: flex;
+  }
+
+  .layout-nav-link {
+    padding: 12px 10px;
+    border-radius: 8px;
+  }
+
+  .layout-nav-link:hover,
+  .layout-nav-link.active {
+    background: #f7f4ff;
+  }
+
+  .layout-nav-link.active::after {
+    display: none;
+  }
+
+  .layout-auth-links {
+    align-items: stretch;
+    flex-direction: column;
+    gap: 10px;
+    margin: 8px 0 0;
+    padding-top: 14px;
+    border-top: 1px solid #f0edf6;
+  }
+
+  .layout-login {
+    padding: 12px 10px;
+  }
+
+  .layout-register {
+    justify-content: center;
+    padding: 14px;
+  }
+
+  .layout-mobile-account {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 10px;
+    border-top: 1px solid #f0edf6;
+  }
+
+  .layout-nav .layout-logout {
+    padding: 12px;
+  }
+
+  .layout-desktop-account {
+    display: none;
+  }
+
+  .layout-footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 13px;
+    padding: 25px 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .shopivo-layout *,
+  .shopivo-layout *::before,
+  .shopivo-layout *::after {
+    transition: none !important;
+  }
+}

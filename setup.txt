@@ -1,0 +1,13 @@
+docker build \  
+  --build-arg VITE_API_BASE_URL=http://shopivo.online:8080 \
+  -t shopivo-web .   
+
+
+docker build --build-arg VITE_API_BASE_URL=http://shopivo-gateway:80 -t shopivo-web .
+
+docker run -d \ 
+--name shopivo-web \
+--network shopivo-network \
+--restart unless-stopped \
+-p 3000:8080 \
+shopivo-web
